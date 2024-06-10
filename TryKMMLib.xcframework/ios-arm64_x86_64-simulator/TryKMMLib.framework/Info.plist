@@ -5,7 +5,7 @@
 	<key>CFBundleExecutable</key>
 	<string>TryKMMLib</string>
 	<key>CFBundleIdentifier</key>
-	<string>io.github.tshion.trykmmlib.TryKMMLib</string>
+	<string>io.github.tshion</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -13,13 +13,13 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>0.0.2</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>iPhoneOS</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>MinimumOSVersion</key>
 	<string>12.0</string>
 	<key>UIDeviceFamily</key>

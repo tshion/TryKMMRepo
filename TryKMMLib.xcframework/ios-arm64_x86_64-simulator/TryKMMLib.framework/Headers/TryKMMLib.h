@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class TKMMLKotlinThrowable, TKMMLKotlinArray<T>, TKMMLKotlinException, TKMMLKotlinRuntimeException, TKMMLKotlinIllegalStateException;
+@class TKMMLSampleModelBase, TKMMLKotlinThrowable, TKMMLKotlinArray<T>, TKMMLKotlinException, TKMMLKotlinRuntimeException, TKMMLKotlinIllegalStateException;
 
 @protocol TKMMLKotlinx_coroutines_coreFlow, TKMMLKotlinx_coroutines_coreFlowCollector, TKMMLKotlinIterator;
 
@@ -144,23 +144,33 @@ __attribute__((swift_name("KotlinBoolean")))
 + (instancetype)numberWithBool:(BOOL)value;
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Greeting")))
-@interface TKMMLGreeting : TKMMLBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 
 /**
- * Get a greeting message.
+ * Model のサンプル実装
  */
-- (NSArray<NSString *> *)greet __attribute__((swift_name("greet()")));
-- (id<TKMMLKotlinx_coroutines_coreFlow>)greetStream __attribute__((swift_name("greetStream()")));
+__attribute__((swift_name("SampleModelBase")))
+@interface TKMMLSampleModelBase : TKMMLBase
+- (int32_t)daysUntilNewYear __attribute__((swift_name("daysUntilNewYear()")));
+
+/**
+ * このインスタンスを破棄する際の処理
+ */
+- (void)deinit __attribute__((swift_name("deinit()")));
+- (NSString *)greet __attribute__((swift_name("greet()")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
 - (void)launchPhraseWithCompletionHandler:(void (^)(NSString * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("launchPhrase(completionHandler:)")));
+- (id<TKMMLKotlinx_coroutines_coreFlow>)sampleStream __attribute__((swift_name("sampleStream()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SampleModel")))
+@interface TKMMLSampleModel : TKMMLSampleModelBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 @end
 
 __attribute__((swift_name("KotlinThrowable")))
