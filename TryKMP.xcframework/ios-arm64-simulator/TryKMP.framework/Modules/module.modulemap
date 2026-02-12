@@ -1,0 +1,8 @@
+framework module "TryKMP" {
+    umbrella header "TryKMP.h"
+
+    export *
+    module * { export * }
+
+    use Foundation
+}
