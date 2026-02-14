@@ -1,6 +1,0 @@
-framework module TryKMMLib {
-    umbrella header "TryKMMLib.h"
-
-    export *
-    module * { export * }
-}
